@@ -24,6 +24,8 @@
 		271ECEFD2A99E8B500F25B7F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271ECEFC2A99E8B500F25B7F /* ContentView.swift */; };
 		271ECEFF2A99E8BD00F25B7F /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271ECEFE2A99E8BD00F25B7F /* RecipeDetailView.swift */; };
 		271ECF012A99E92900F25B7F /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271ECF002A99E92900F25B7F /* RecipeViewModel.swift */; };
+		271ECF052A9A067700F25B7F /* AddRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271ECF042A9A067600F25B7F /* AddRecipeView.swift */; };
+		271ECF072A9A0EED00F25B7F /* ParentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271ECF062A9A0EED00F25B7F /* ParentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		271ECEFC2A99E8B500F25B7F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		271ECEFE2A99E8BD00F25B7F /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
 		271ECF002A99E92900F25B7F /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
+		271ECF042A9A067600F25B7F /* AddRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeView.swift; sourceTree = "<group>"; };
+		271ECF062A9A0EED00F25B7F /* ParentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +116,9 @@
 				271ECEFA2A99E8AB00F25B7F /* SignUpView.swift */,
 				271ECEF82A99E89F00F25B7F /* LoginView.swift */,
 				271ECEFC2A99E8B500F25B7F /* ContentView.swift */,
+				271ECF042A9A067600F25B7F /* AddRecipeView.swift */,
 				271ECEFE2A99E8BD00F25B7F /* RecipeDetailView.swift */,
+				271ECF062A9A0EED00F25B7F /* ParentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -210,9 +216,11 @@
 				271ECEFF2A99E8BD00F25B7F /* RecipeDetailView.swift in Sources */,
 				271ECEFD2A99E8B500F25B7F /* ContentView.swift in Sources */,
 				271ECED42A99DBE200F25B7F /* recipe_blog_trial_projectApp.swift in Sources */,
+				271ECF052A9A067700F25B7F /* AddRecipeView.swift in Sources */,
 				271ECEFB2A99E8AB00F25B7F /* SignUpView.swift in Sources */,
 				271ECEF62A99E87F00F25B7F /* StartView.swift in Sources */,
 				271ECEF22A99E86900F25B7F /* User.swift in Sources */,
+				271ECF072A9A0EED00F25B7F /* ParentView.swift in Sources */,
 				271ECF012A99E92900F25B7F /* RecipeViewModel.swift in Sources */,
 				271ECEF42A99E87100F25B7F /* Recipe.swift in Sources */,
 			);

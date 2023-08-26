@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
-import FirebaseCore
+import Firebase
 
 class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-    FirebaseApp.configure()
+      FirebaseApp.configure()
+
+      let db = Firestore.firestore()
 
     return true
   }
@@ -24,7 +26,7 @@ struct recipe_blog_trial_projectApp: App {
     
     var body: some Scene {
         WindowGroup {
-            StartView()
+            ParentView()
         }
     }
 }

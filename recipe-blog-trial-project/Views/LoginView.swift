@@ -7,10 +7,13 @@
 
 import Foundation
 import SwiftUI
+import Firebase
 
 struct LoginView: View {
+    @Binding var isLoggedIn: Bool
     @State private var email: String = ""
     @State private var password: String = ""
+    @State private var navigateToContent: Bool? = nil
     
     var body: some View {
         VStack {
@@ -19,15 +22,28 @@ struct LoginView: View {
             SecureField("Password", text: $password)
                 .textFieldStyle(.roundedBorder)
             Button("Login") {
-                // Firebase login logic here
+                Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+                    if let e = error {
+                        print(e.localizedDescription)
+                    } else {
+                        // Navigate to ContentView
+                        self.isLoggedIn = true
+                        self.navigateToContent = true
+                        
+                    }
+                    
+                }
             }
-            .buttonStyle(.bordered)
+            NavigationLink("", destination: ContentView(isLoggedIn: $isLoggedIn).navigationBarBackButtonHidden(true), tag: true, selection: $navigateToContent)
+                .hidden()
         }
+        .padding()
+        .buttonStyle(.bordered)
     }
 }
 
 struct LoginPreview: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(isLoggedIn: .constant(false))
     }
 }

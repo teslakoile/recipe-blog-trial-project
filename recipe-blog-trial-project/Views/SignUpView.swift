@@ -6,56 +6,64 @@
 //
 
 import SwiftUI
-import FirebaseAuth
+import Firebase
 
 struct SignUpView: View {
+    @Binding var isLoggedIn: Bool
     @State private var name: String = ""
     @State private var email: String = ""
     @State private var password: String = ""
-    @State private var navigateToLogin = false
+    @State private var navigateToLogin: Bool? = nil
     
     var body: some View {
-        NavigationView {
-            VStack {
-                TextField("Name", text: $name)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    
-                TextField("Email", text: $email)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    
-                SecureField("Password", text: $password)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    
-                Button("Sign Up") {
-                    Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-                        if let e = error {
-                            print(e.localizedDescription)
-                        } else {
-                            // Update user's profile to save the name
-                            if let user = Auth.auth().currentUser {
-                                let changeRequest = user.createProfileChangeRequest()
-                                changeRequest.displayName = name
-                                changeRequest.commitChanges { error in
-                                    if let e = error {
-                                        print(e.localizedDescription)
+        VStack {
+            TextField("Name", text: $name)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+            
+            TextField("Email", text: $email)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+            
+            SecureField("Password", text: $password)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+            
+            Button("Sign Up") {
+                Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+                    if let e = error {
+                        print(e.localizedDescription)
+                    } else {
+                        // Update user's profile to save the name
+                        if let user = authResult?.user {
+                                    let userId = user.uid
+                                    
+                                    // Save additional user info in Firestore
+                                    let db = Firestore.firestore()
+                                    db.collection("users").document(userId).setData([
+                                        "name": name,
+                                        "email": email
+                                    ]) { err in
+                                        if let err = err {
+                                            print("Error writing document: \(err)")
+                                        } else {
+                                            print("Document successfully written!")
+                                        }
                                     }
                                 }
-                            }
-                            // Navigate to LoginView
-                            self.navigateToLogin = true
-                        }
+                        // Navigate to LoginView
+                        self.isLoggedIn = true
+                        self.navigateToLogin = true
                     }
                 }
-                NavigationLink("", destination: LoginView())
             }
-            .padding()
+            NavigationLink("", destination: LoginView(isLoggedIn: $isLoggedIn).navigationBarBackButtonHidden(true), tag: true, selection: $navigateToLogin)
+                .hidden()
         }
+        .padding()
     }
 }
 
 
 struct SignupPreview: PreviewProvider {
     static var previews: some View {
-        SignUpView()
+        SignUpView(isLoggedIn: .constant(false))
     }
 }

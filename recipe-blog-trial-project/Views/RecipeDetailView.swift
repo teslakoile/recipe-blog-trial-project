@@ -5,27 +5,43 @@
 //  Created by Kyle Naranjo on 8/26/23.
 //
 
-import Foundation
 import SwiftUI
+import Firebase
 
 struct RecipeDetailView: View {
-    var recipe: Recipe // Assume Recipe is your data model
+    var recipe: Recipe
+    var currentUserId: String // Pass the current user's ID here
+    
+    @State private var ingredients: [String] = []
+    @State private var instructions: [String] = []
+    @State private var showEditForm: Bool = false
     
     var body: some View {
         VStack {
+            // Display recipe title, ingredients, and instructions
             Text(recipe.title)
-            ForEach(recipe.instructions, id: \.self) { step in
-                Text(step)
+            
+            List(ingredients, id: \.self) { ingredient in
+                Text(ingredient)
             }
-//            if recipe.userId == /* Current User ID */ {
-//                Button("Edit") {
-//                    // Edit logic here
-//                }
-//                Button("Delete") {
-//                    // Delete logic here
-//                }
-//            }
+            
+            List(instructions, id: \.self) { instruction in
+                Text(instruction)
+            }
+            
+            // Conditionally display "Add Item" and "Save" buttons
+            Text(currentUserId)
+            Text(recipe.userId)
+            if currentUserId == recipe.userId {
+                Button("Edit Recipe") {
+                    self.showEditForm = true
+                }
+//                .background(NavigationLink("", destination: AddRecipeView(recipe: recipe, isOwner: userId == recipe.userId), isActive: $showEditForm).hidden())
+            }
+        }
+        .onAppear {
+            self.ingredients = recipe.ingredients
+            self.instructions = recipe.instructions
         }
     }
 }
-
