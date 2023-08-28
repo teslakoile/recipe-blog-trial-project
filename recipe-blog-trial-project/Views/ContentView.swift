@@ -79,9 +79,11 @@ struct ContentView: View {
     }
     
     private func loadRecipes() {
-        if let userId = Auth.auth().currentUser?.uid {
+//        if let userId = Auth.auth().currentUser?.uid {
             let db = Firestore.firestore()
-            db.collection("recipes").addSnapshotListener { querySnapshot, error in
+            db.collection("recipes")
+                .order(by: "lastModified", descending: true)
+                .addSnapshotListener { querySnapshot, error in
                 guard let documents = querySnapshot?.documents else {
                     print("Error fetching documents: \(error!)")
                     return
@@ -92,16 +94,18 @@ struct ContentView: View {
                     let ingredients = data["ingredients"] as? [String] ?? []
                     let instructions = data["instructions"] as? [String] ?? []
                     let creatorId = data["userId"] as? String ?? ""
+                    let lastModified = data["lastModified"] as? Timestamp
                     return Recipe(
                         id: queryDocumentSnapshot.documentID,
                         title: title,
                         ingredients: ingredients,
                         instructions: instructions,
-                        userId: creatorId
+                        userId: creatorId,
+                        lastModified: lastModified
                     )
                 }
             }
-        }
+//        }
     }
     
     private func logout() {
