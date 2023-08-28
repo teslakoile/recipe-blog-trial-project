@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Firebase
 
 struct StartView: View {
     @Binding var isLoggedIn: Bool
@@ -25,6 +26,12 @@ struct StartView: View {
                 .buttonStyle(.bordered)
             }
         }
+        .onAppear {
+                    // Check if the user is already logged in
+                    if Auth.auth().currentUser != nil {
+                        isLoggedIn = true
+                    }
+                }
     }
 }
 

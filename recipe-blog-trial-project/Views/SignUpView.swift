@@ -14,6 +14,8 @@ struct SignUpView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var navigateToLogin: Bool? = nil
+    @State private var errorMessage: String? = nil
+    @State private var showingAlert = false
     
     var body: some View {
         VStack {
@@ -29,7 +31,8 @@ struct SignUpView: View {
             Button("Sign Up") {
                 Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                     if let e = error {
-                        print(e.localizedDescription)
+                        errorMessage = e.localizedDescription
+                        showingAlert = true
                     } else {
                         // Update user's profile to save the name
                         if let user = authResult?.user {
@@ -54,6 +57,9 @@ struct SignUpView: View {
                     }
                 }
             }
+            .alert(isPresented: $showingAlert) {
+                            Alert(title: Text("Error"), message: Text(errorMessage ?? "Error"), dismissButton: .default(Text("OK")))
+                        }
             NavigationLink("", destination: LoginView(isLoggedIn: $isLoggedIn).navigationBarBackButtonHidden(true), tag: true, selection: $navigateToLogin)
                 .hidden()
         }

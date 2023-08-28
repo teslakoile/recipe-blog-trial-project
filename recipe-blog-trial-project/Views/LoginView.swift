@@ -14,6 +14,8 @@ struct LoginView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var navigateToContent: Bool? = nil
+    @State private var errorMessage: String? = nil
+    @State private var showingAlert = false
     
     var body: some View {
         VStack {
@@ -24,7 +26,8 @@ struct LoginView: View {
             Button("Login") {
                 Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
                     if let e = error {
-                        print(e.localizedDescription)
+                        errorMessage = e.localizedDescription
+                        showingAlert = true
                     } else {
                         // Navigate to ContentView
                         self.isLoggedIn = true
@@ -34,6 +37,9 @@ struct LoginView: View {
                     
                 }
             }
+            .alert(isPresented: $showingAlert) {
+                            Alert(title: Text("Error"), message: Text(errorMessage ?? "Error"), dismissButton: .default(Text("OK")))
+                        }
             NavigationLink("", destination: ContentView(isLoggedIn: $isLoggedIn).navigationBarBackButtonHidden(true), tag: true, selection: $navigateToContent)
                 .hidden()
         }
