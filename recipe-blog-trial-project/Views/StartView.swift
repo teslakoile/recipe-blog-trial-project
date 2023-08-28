@@ -15,16 +15,44 @@ struct StartView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Image("icon")
-                NavigationLink(destination: LoginView(isLoggedIn: $isLoggedIn)) {
-                    Text("Login")
-                }
-                .buttonStyle(.bordered)
+                Text("🍳")
+                    .font(.system(size: 140))
+                    .padding(.bottom, 20)
+                
+                Text("Welcome to CookingCorner!")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.center)
+                
+                
+                
                 NavigationLink(destination: SignUpView(isLoggedIn: $isLoggedIn)) {
                     Text("Sign Up")
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                        .frame(height: 40)
+                        .font(.system(size: 20, weight: .regular))
+                        .cornerRadius(15)
+                        .foregroundColor(.orange)
+                        
                 }
+                .padding(.vertical, 5)
                 .buttonStyle(.bordered)
+                
+                
+                NavigationLink(destination: LoginView(isLoggedIn: $isLoggedIn)) {
+                    Text("Login")
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                        .frame(height: 40)
+                        .font(.system(size: 20, weight: .regular))
+                        .cornerRadius(15)
+                        
+                }
+                .buttonStyle(.borderedProminent)
+                .tint(.orange)
+    
+                
             }
+            .padding(.horizontal, 40)
         }
         .onAppear {
                     // Check if the user is already logged in

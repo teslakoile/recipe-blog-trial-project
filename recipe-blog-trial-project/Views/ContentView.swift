@@ -31,10 +31,12 @@ struct ContentView: View {
 
             }
             .navigationBarTitle("Recipes")
+            
             .navigationBarItems(
                             leading: Button("Logout") {
                                 self.showLogoutAlert = true
                             }
+                                .foregroundColor(.orange)
                             .alert(isPresented: $showLogoutAlert) {
                                 Alert(
                                     title: Text("Logout"),
@@ -131,9 +133,9 @@ struct RecipeRow: View {
                 .padding(.bottom, 5)
             
             
-            Text("Annalise Keating")
+            Text("\(userName)")
                 .font(.system(size: 16, weight: .medium))
-                .foregroundColor(isOwner ? Color.blue : Color.gray)
+                .foregroundColor(isOwner ? Color.orange : Color.gray)
                 .padding(.bottom, 10)
             
             if let lastModified = recipe.lastModified?.dateValue() {
