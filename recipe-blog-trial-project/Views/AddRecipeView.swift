@@ -42,6 +42,7 @@ struct AddRecipeView: View {
                                         }
                                     }
                                     .onDelete(perform: deleteIngredient)
+                                    .onMove(perform: moveIngredient)
                                     
                                     if isEditing && isOwner {
                                         TextField("New Ingredient", text: $newIngredient)
@@ -63,6 +64,7 @@ struct AddRecipeView: View {
                                         }
                                     }
                                     .onDelete(perform: deleteInstruction)
+                                    .onMove(perform: moveInstruction)
                                     
                                     if isEditing && isOwner {
                                         TextField("New Instruction", text: $newInstruction)
@@ -101,7 +103,8 @@ struct AddRecipeView: View {
                 }
             }
         
-            .navigationBarTitle("Add Recipe", displayMode: .inline)
+//            .navigationBarTitle("Add Recipe", displayMode: .inline)
+            .navigationBarTitle(navigationBarTitle, displayMode: .inline)
             .navigationBarItems(trailing: Button(isEditing ? "Done" : "Edit") {
                 self.isEditing.toggle()
             }.disabled(!isOwner))
@@ -131,7 +134,8 @@ struct AddRecipeView: View {
                 "title": recipeTitle,
                 "ingredients": ingredients,
                 "instructions": instructions,
-                "userId": userId
+                "userId": userId,
+                "lastModified": FieldValue.serverTimestamp()
             ]
             
             if let existingRecipe = recipe {
@@ -183,5 +187,23 @@ struct AddRecipeView: View {
             instructions.remove(atOffsets: offsets)
         }
     }
+    
+    private func moveIngredient(from source: IndexSet, to destination: Int) {
+        ingredients.move(fromOffsets: source, toOffset: destination)
+    }
+    
+    private func moveInstruction(from source: IndexSet, to destination: Int) {
+        instructions.move(fromOffsets: source, toOffset: destination)
+    }
+    
+    private var navigationBarTitle: String {
+            if isEditing {
+                return "Edit Recipe"
+            } else if recipe == nil {
+                return "Add Recipe"
+            } else {
+                return recipe?.title ?? "View Recipe"
+            }
+        }
 
 }
