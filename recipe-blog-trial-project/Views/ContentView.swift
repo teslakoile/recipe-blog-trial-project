@@ -24,11 +24,11 @@ struct ContentView: View {
                 ForEach(recipes, id: \.id) { recipe in
                     if let userId = Auth.auth().currentUser?.uid {
                         NavigationLink(destination: AddRecipeView(recipe: recipe, isOwner: userId == recipe.userId)) {
-                            RecipeRow(recipe: recipe)
+                            RecipeRow(recipe: recipe, isOwner: userId == recipe.userId)
                         }
                     }
-                    
                 }
+
             }
             .navigationBarTitle("Recipes")
             .navigationBarItems(
@@ -121,11 +121,49 @@ struct ContentView: View {
 
 struct RecipeRow: View {
     var recipe: Recipe
+    var isOwner: Bool
+    @State private var userName: String = ""
     
     var body: some View {
-        Text(recipe.title)
-        Text(recipe.userId)
+        VStack(alignment: .leading, spacing: 0) {
+            Text(recipe.title)
+                .font(.system(size: 22, weight: .bold))
+                .padding(.bottom, 5)
+            
+            
+            Text("Annalise Keating")
+                .font(.system(size: 16, weight: .medium))
+                .foregroundColor(isOwner ? Color.blue : Color.gray)
+                .padding(.bottom, 10)
+            
+            if let lastModified = recipe.lastModified?.dateValue() {
+                let formatter = DateFormatter()
+                Text("\(recipe.formattedLastModified)")
+                                .font(.system(size: 14, weight: .light))
+                                .foregroundColor(.gray)
+            }
+//
+//            Text(recipe.ingredients.joined(separator: ", "))
+//                .lineLimit(1)
+//                .truncationMode(.tail)
+            
+        }
+        .onAppear {
+                    fetchUserName(userId: recipe.userId)
+                }
+        .padding()
     }
+    
+    private func fetchUserName(userId: String) {
+            let db = Firestore.firestore()
+            db.collection("users").document(userId).getDocument { document, error in
+                if let document = document, document.exists {
+                    if let data = document.data() {
+                        self.userName = data["name"] as? String ?? "Unknown"
+                    }
+                }
+            }
+        }
 }
 
 
@@ -133,5 +171,18 @@ struct RecipeRow: View {
 struct ContentPreview: PreviewProvider {
     static var previews: some View {
         ContentView(isLoggedIn: .constant(true))
+    }
+}
+
+extension Recipe {
+    var formattedLastModified: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy"
+        
+        if let lastModified = self.lastModified?.dateValue() {
+            return formatter.string(from: lastModified)
+        } else {
+            return "Unknown"
+        }
     }
 }
