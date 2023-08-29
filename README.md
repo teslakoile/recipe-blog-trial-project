@@ -15,17 +15,30 @@ CookingCorner is an iOS app built using Swift and SwiftUI. It serves as a platfo
 
 - Initial page with options to login or sign up.
 
-![Start Page](./recipe-blog-trial-project/Documentation/start.png)
+<figure>
+  <img src="./recipe-blog-trial-project/Documentation/start.png" width="250" height="auto">
+  <figcaption>Start Page</figcaption>
+</figure>
 
 ### Login Page
 
 - User authentication using Firebase.
 - Alerts to show if there is an error encountered during login.
 
+<figure>
+  <img src="./recipe-blog-trial-project/Documentation/alerts.gif" width="250" height="auto">
+  <figcaption>Alert Messages</figcaption>
+</figure>
+
 ### Signup Page
 
 - New user registration.
 - Alerts to show if there is an error encountered during signup.
+  
+<figure>
+  <img src="./recipe-blog-trial-project/Documentation/signup.gif" width="250" height="auto">
+  <figcaption>Sign Up Flow</figcaption>
+</figure>
 
 ### Content View
 
@@ -34,12 +47,44 @@ CookingCorner is an iOS app built using Swift and SwiftUI. It serves as a platfo
 - Recipes created by the current user are highlighted.
 - Logout functionality using Firebase.
 
+<div style="display: flex">
+  <figure>
+    <img src="./recipe-blog-trial-project/Documentation/contentview.gif" width="250" height="auto">
+  </figure>
+  <figure>
+    <img src="./recipe-blog-trial-project/Documentation/logout.gif" width="250" height="auto">
+  </figure>
+</div>
+
 ### Add Recipe View
 
 - Users can create their own recipes.
 - Users can only modify their own recipes.
 - Delete individual ingredients and instructions by swiping them from right to left.
 - Rearrange the order of ingredients and instructions by holding and moving the row to the desired location.
+
+<div style="display: flex">
+  <figure>
+    <img src="./recipe-blog-trial-project/Documentation/addrecipe.gif" width="200" height="auto">
+  </figure>
+  <figure>
+    <img src="./recipe-blog-trial-project/Documentation/editrecipe.gif" width="200" height="auto">
+  </figure>
+  <figure>
+    <img src="./recipe-blog-trial-project/Documentation/addrecipe2.gif" width="200" height="auto">
+  </figure>
+  <figure>
+    <img src="./recipe-blog-trial-project/Documentation/delete%20recipe.gif" width="200" height="auto">
+  </figure>
+</div>
+
+### Dark Mode
+- The app supports dark mode for better usability.
+
+<figure>
+  <img src="./recipe-blog-trial-project/Documentation/darkmode.gif" width="250" height="auto">
+  <figcaption>Dark Mode</figcaption>
+</figure>
 
 ## Requirements
 
@@ -74,5 +119,3 @@ To replicate this project, you'll need to set up your own Firebase project. Foll
 2. Navigate to the Content View to see a list of recipes.
 3. Add a new recipe by clicking the "Add" button.
 4. Edit or delete recipes by clicking on them.
-
-
