@@ -19,11 +19,32 @@ struct LoginView: View {
     
     var body: some View {
         VStack {
+            Text("Login 🍳")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .multilineTextAlignment(.center)
+                .padding(.bottom, 50)
+            
             TextField("Email", text: $email)
-                .textFieldStyle(.roundedBorder)
+                .frame(height: 50)
+                .textFieldStyle(PlainTextFieldStyle())
+                .padding([.horizontal], 15)
+                .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.gray.opacity(0.5)))
+                .font(.system(size: 20, weight: .regular))
+                .foregroundColor(.gray)
+                .padding(.bottom, 1)
+                
+            
             SecureField("Password", text: $password)
-                .textFieldStyle(.roundedBorder)
-            Button("Login") {
+                .frame(height: 50)
+                .textFieldStyle(PlainTextFieldStyle())
+                .padding([.horizontal], 15)
+                .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.gray.opacity(0.5)))
+                .font(.system(size: 20, weight: .regular))
+                .foregroundColor(.gray)
+                .padding(.bottom, 20)
+            
+            Button {
                 Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
                     if let e = error {
                         errorMessage = e.localizedDescription
@@ -37,14 +58,22 @@ struct LoginView: View {
                     
                 }
             }
+        label: {
+            Text("Login")
+                .frame(minWidth: 0, maxWidth: .infinity)
+                .frame(height: 40)
+                .font(.system(size: 20, weight: .regular))
+                .cornerRadius(15)
+        }
+            .buttonStyle(.borderedProminent)
+            .tint(.orange)
             .alert(isPresented: $showingAlert) {
                             Alert(title: Text("Error"), message: Text(errorMessage ?? "Error"), dismissButton: .default(Text("OK")))
                         }
             NavigationLink("", destination: ContentView(isLoggedIn: $isLoggedIn).navigationBarBackButtonHidden(true), tag: true, selection: $navigateToContent)
                 .hidden()
         }
-        .padding()
-        .buttonStyle(.bordered)
+        .padding(.horizontal, 40)
     }
 }
 

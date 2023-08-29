@@ -52,6 +52,7 @@ struct AddRecipeView: View {
                                                 newIngredient = ""
                                             }
                                         }
+                                 
                                     }
                                 }
                                 
@@ -74,6 +75,7 @@ struct AddRecipeView: View {
                                                 newInstruction = ""
                                             }
                                         }
+                                        
                                     }
                                 }
                 
@@ -82,6 +84,7 @@ struct AddRecipeView: View {
                         saveRecipeToFirestore()
                         presentationMode.wrappedValue.dismiss()
                     }
+                    
                     if isOwner && recipe != nil { // Show delete button only if the user is the owner and the recipe already exists
 //                        Section {
                             Button("Delete Recipe") {
@@ -102,12 +105,14 @@ struct AddRecipeView: View {
                     }
                 }
             }
+//            .foregroundColor(.orange)
         
 //            .navigationBarTitle("Add Recipe", displayMode: .inline)
             .navigationBarTitle(navigationBarTitle, displayMode: .inline)
             .navigationBarItems(trailing: Button(isEditing ? "Done" : "Edit") {
                 self.isEditing.toggle()
             }.disabled(!isOwner))
+        
 //        }
         .onAppear {
             if recipe == nil {

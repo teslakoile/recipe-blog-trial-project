@@ -36,7 +36,7 @@ struct ContentView: View {
                             leading: Button("Logout") {
                                 self.showLogoutAlert = true
                             }
-                                .foregroundColor(.orange)
+                                
                             .alert(isPresented: $showLogoutAlert) {
                                 Alert(
                                     title: Text("Logout"),
@@ -50,6 +50,7 @@ struct ContentView: View {
                             trailing: Button("Add") {
                                 self.showAddRecipeView = true
                             }
+                                
                         )
             .background(NavigationLink("", destination: AddRecipeView(recipe: nil, isOwner: true), isActive: $showAddRecipeView).hidden())
             .onAppear {
@@ -169,13 +170,6 @@ struct RecipeRow: View {
 }
 
 
-
-struct ContentPreview: PreviewProvider {
-    static var previews: some View {
-        ContentView(isLoggedIn: .constant(true))
-    }
-}
-
 extension Recipe {
     var formattedLastModified: String {
         let formatter = DateFormatter()
@@ -186,5 +180,12 @@ extension Recipe {
         } else {
             return "Unknown"
         }
+    }
+}
+
+
+struct ContentPreview: PreviewProvider {
+    static var previews: some View {
+        ContentView(isLoggedIn: .constant(true))
     }
 }
