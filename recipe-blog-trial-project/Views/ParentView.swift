@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// controls navigation flow, if user is logged in, then it navigates them to the content view
 struct ParentView: View {
     @State private var isLoggedIn: Bool = false
 
@@ -22,3 +23,4 @@ struct ParentView: View {
             }
         }
 }
+

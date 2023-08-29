@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import Firebase
 
+// the Start View shows the Signup and Login options
 struct StartView: View {
     @Binding var isLoggedIn: Bool
     
@@ -25,7 +26,7 @@ struct StartView: View {
                     .multilineTextAlignment(.center)
                 
                 
-                
+                // Navigation to Sign Up if user is not logged in
                 NavigationLink(destination: SignUpView(isLoggedIn: $isLoggedIn)) {
                     Text("Sign Up")
                         .frame(minWidth: 0, maxWidth: .infinity)
@@ -38,7 +39,7 @@ struct StartView: View {
                 .padding(.vertical, 5)
                 .buttonStyle(.bordered)
                 
-                
+                // Navigation to Login if user is not logged in
                 NavigationLink(destination: LoginView(isLoggedIn: $isLoggedIn)) {
                     Text("Login")
                         .frame(minWidth: 0, maxWidth: .infinity)

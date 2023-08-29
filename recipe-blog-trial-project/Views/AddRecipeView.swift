@@ -9,6 +9,7 @@ import SwiftUI
 import FirebaseFirestore
 import FirebaseAuth
 
+// allows users to Add, Edit, and Delete recipes
 struct AddRecipeView: View {
     
     var recipe: Recipe?
@@ -20,13 +21,13 @@ struct AddRecipeView: View {
     @State private var newIngredient: String = ""
     @State private var newInstruction: String = ""
 
+    // this variable enables owners to modify their own recipes only
     @Environment(\.presentationMode) var presentationMode
     
     @State private var isEditing: Bool = false
     @State private var showDeleteAlert: Bool = false
     
     var body: some View {
-//        NavigationView {
             Form {
                 Section(header: Text("Recipe Title")) {
                     TextField("Title", text: $recipeTitle)
@@ -86,12 +87,12 @@ struct AddRecipeView: View {
                     }
                     
                     if isOwner && recipe != nil { // Show delete button only if the user is the owner and the recipe already exists
-//                        Section {
                             Button("Delete Recipe") {
                                 self.showDeleteAlert = true
                             }
                             .foregroundColor(.red)
                             .alert(isPresented: $showDeleteAlert) {
+                                // shows an alert when a user deletes a recipe
                                 Alert(
                                     title: Text("Delete Recipe"),
                                     message: Text("Are you sure you want to delete this recipe?"),
@@ -101,19 +102,15 @@ struct AddRecipeView: View {
                                     secondaryButton: .cancel()
                                 )
                             }
-//                        }
                     }
                 }
             }
-//            .foregroundColor(.orange)
         
-//            .navigationBarTitle("Add Recipe", displayMode: .inline)
             .navigationBarTitle(navigationBarTitle, displayMode: .inline)
             .navigationBarItems(trailing: Button(isEditing ? "Done" : "Edit") {
                 self.isEditing.toggle()
             }.disabled(!isOwner))
-        
-//        }
+
         .onAppear {
             if recipe == nil {
                 isEditing = true
@@ -128,6 +125,7 @@ struct AddRecipeView: View {
         }
     }
     
+    // saves the recipe to Firebase, edits if the recipe exists
     private func saveRecipeToFirestore() {
         // Get the current user's ID
         if let userId = Auth.auth().currentUser?.uid {
@@ -166,8 +164,8 @@ struct AddRecipeView: View {
         }
     }
     
+    // deletes a recipe on Firebase
     private func deleteRecipeFromFirestore() {
-            // Assuming you have the recipe's ID in a variable called recipeId
             if let recipeId = recipe?.id {
                 let db = Firestore.firestore()
                 db.collection("recipes").document(recipeId).delete() { err in
@@ -181,26 +179,31 @@ struct AddRecipeView: View {
             }
         }
     
+    // enables users to delete individual ingredients by sliding the row to the left
     private func deleteIngredient(at offsets: IndexSet) {
         if isEditing && isOwner {
             ingredients.remove(atOffsets: offsets)
         }
     }
     
+    // enables users to delete individual instructions by sliding the row to the left
     private func deleteInstruction(at offsets: IndexSet) {
         if isEditing && isOwner {
             instructions.remove(atOffsets: offsets)
         }
     }
     
+    // enables users to reorder individual ingredients by holding the row and moving it
     private func moveIngredient(from source: IndexSet, to destination: Int) {
         ingredients.move(fromOffsets: source, toOffset: destination)
     }
     
+    // enables users to reorder individual instructions by holding the row and moving it
     private func moveInstruction(from source: IndexSet, to destination: Int) {
         instructions.move(fromOffsets: source, toOffset: destination)
     }
     
+    // changes the title of the navbar depending on if the user is editing, adding, or viewing a recipe
     private var navigationBarTitle: String {
             if isEditing {
                 return "Edit Recipe"

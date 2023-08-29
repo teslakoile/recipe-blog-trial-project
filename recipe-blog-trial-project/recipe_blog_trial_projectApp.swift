@@ -11,9 +11,11 @@ import Firebase
 class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+      
+      // Configure Firebase for the App
       FirebaseApp.configure()
-
       let db = Firestore.firestore()
+      print(db)
 
     return true
   }

@@ -44,6 +44,7 @@ struct LoginView: View {
                 .foregroundColor(.gray)
                 .padding(.bottom, 20)
             
+            // Uses Firebase to log the user in using email and password
             Button {
                 Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
                     if let e = error {
@@ -67,6 +68,7 @@ struct LoginView: View {
         }
             .buttonStyle(.borderedProminent)
             .tint(.orange)
+            // Shows an alert message when the user's inputs are not formatted well
             .alert(isPresented: $showingAlert) {
                             Alert(title: Text("Error"), message: Text(errorMessage ?? "Error"), dismissButton: .default(Text("OK")))
                         }

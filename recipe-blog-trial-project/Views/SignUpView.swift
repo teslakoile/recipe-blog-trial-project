@@ -52,6 +52,7 @@ struct SignUpView: View {
                 .foregroundColor(.gray)
                 .padding(.bottom, 20)
             
+            // uses Firebase to create a user given email and password
             Button {
                 Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                     if let e = error {
@@ -90,6 +91,7 @@ struct SignUpView: View {
         }
             .buttonStyle(.borderedProminent)
             .tint(.orange)
+            // Shows the message alert if the user's inputs are not formatted well
             .alert(isPresented: $showingAlert) {
                             Alert(title: Text("Error"), message: Text(errorMessage ?? "Error"), dismissButton: .default(Text("OK")))
                         }

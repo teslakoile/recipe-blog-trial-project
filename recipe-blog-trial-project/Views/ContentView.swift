@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import Firebase
 
-
+// Content view shows the recipes in a list/row format
 struct ContentView: View {
     @Binding var isLoggedIn: Bool
     @State private var email: String = ""
@@ -21,6 +21,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
+                // Uses Firebase to fetch recipe data and renders it into a list view
                 ForEach(recipes, id: \.id) { recipe in
                     if let userId = Auth.auth().currentUser?.uid {
                         NavigationLink(destination: AddRecipeView(recipe: recipe, isOwner: userId == recipe.userId)) {
@@ -32,6 +33,7 @@ struct ContentView: View {
             }
             .navigationBarTitle("Recipes")
             
+            // Logout button allows the user to log out using Firebase
             .navigationBarItems(
                             leading: Button("Logout") {
                                 self.showLogoutAlert = true
@@ -54,6 +56,7 @@ struct ContentView: View {
                         )
             .background(NavigationLink("", destination: AddRecipeView(recipe: nil, isOwner: true), isActive: $showAddRecipeView).hidden())
             .onAppear {
+                // Fetches data from Firebase
                 loadUserData()
                 loadRecipes()
             }
@@ -81,8 +84,8 @@ struct ContentView: View {
         }
     }
     
+    // loadRecipes fetches data from Firebase
     private func loadRecipes() {
-//        if let userId = Auth.auth().currentUser?.uid {
             let db = Firestore.firestore()
             db.collection("recipes")
                 .order(by: "lastModified", descending: true)
@@ -108,9 +111,9 @@ struct ContentView: View {
                     )
                 }
             }
-//        }
     }
     
+    // uses Firebase to log users out
     private func logout() {
             do {
                 try Auth.auth().signOut()
@@ -122,6 +125,7 @@ struct ContentView: View {
         }
 }
 
+// RecipeRow structure formats the recipes in the ContentView
 struct RecipeRow: View {
     var recipe: Recipe
     var isOwner: Bool
@@ -145,10 +149,7 @@ struct RecipeRow: View {
                                 .font(.system(size: 14, weight: .light))
                                 .foregroundColor(.gray)
             }
-//
-//            Text(recipe.ingredients.joined(separator: ", "))
-//                .lineLimit(1)
-//                .truncationMode(.tail)
+
             
         }
         .onAppear {
@@ -157,6 +158,7 @@ struct RecipeRow: View {
         .padding()
     }
     
+    // this function is used to compare if the owner of the recipe is the current user
     private func fetchUserName(userId: String) {
             let db = Firestore.firestore()
             db.collection("users").document(userId).getDocument { document, error in
@@ -169,7 +171,7 @@ struct RecipeRow: View {
         }
 }
 
-
+// extends the Recipe to have a format in the style of MM/dd/yyyy
 extension Recipe {
     var formattedLastModified: String {
         let formatter = DateFormatter()
