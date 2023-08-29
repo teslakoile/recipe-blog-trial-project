@@ -15,7 +15,7 @@ CookingCorner is an iOS app built using Swift and SwiftUI. It serves as a platfo
 
 - Initial page with options to login or sign up.
 
-![Start Page](./Documentation/start.png)
+![Start Page](./recipe-blog-trial-project/Documentation/start.png)
 
 ### Login Page
 

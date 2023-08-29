@@ -27,20 +27,20 @@
 		271ECF092A9DED0000F25B7F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 271ECF082A9DED0000F25B7F /* README.md */; };
 		271ECF0B2A9DEFF500F25B7F /* .gitignore.md in Resources */ = {isa = PBXBuildFile; fileRef = 271ECF0A2A9DEFF500F25B7F /* .gitignore.md */; };
 		271ECF1C2A9DF42F00F25B7F /* contentview.png in Resources */ = {isa = PBXBuildFile; fileRef = 271ECF0D2A9DF42E00F25B7F /* contentview.png */; };
-		271ECF1D2A9DF42F00F25B7F /* editandreorder.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 271ECF0E2A9DF42E00F25B7F /* editandreorder.mp4 */; };
-		271ECF1E2A9DF42F00F25B7F /* logout.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 271ECF0F2A9DF42E00F25B7F /* logout.mp4 */; };
 		271ECF1F2A9DF42F00F25B7F /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = 271ECF102A9DF42E00F25B7F /* login.png */; };
 		271ECF202A9DF42F00F25B7F /* start.png in Resources */ = {isa = PBXBuildFile; fileRef = 271ECF112A9DF42F00F25B7F /* start.png */; };
-		271ECF212A9DF42F00F25B7F /* signup.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 271ECF122A9DF42F00F25B7F /* signup.mp4 */; };
-		271ECF222A9DF42F00F25B7F /* darkmode.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 271ECF132A9DF42F00F25B7F /* darkmode.mp4 */; };
 		271ECF232A9DF42F00F25B7F /* viewrecipe.png in Resources */ = {isa = PBXBuildFile; fileRef = 271ECF142A9DF42F00F25B7F /* viewrecipe.png */; };
-		271ECF242A9DF42F00F25B7F /* alerts.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 271ECF152A9DF42F00F25B7F /* alerts.mp4 */; };
-		271ECF252A9DF42F00F25B7F /* delete recipe.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 271ECF162A9DF42F00F25B7F /* delete recipe.mp4 */; };
-		271ECF262A9DF42F00F25B7F /* contentview.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 271ECF172A9DF42F00F25B7F /* contentview.mp4 */; };
 		271ECF272A9DF42F00F25B7F /* signup.png in Resources */ = {isa = PBXBuildFile; fileRef = 271ECF182A9DF42F00F25B7F /* signup.png */; };
-		271ECF282A9DF42F00F25B7F /* addrecipe.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 271ECF192A9DF42F00F25B7F /* addrecipe.mp4 */; };
-		271ECF292A9DF42F00F25B7F /* editrecipe.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 271ECF1A2A9DF42F00F25B7F /* editrecipe.mp4 */; };
-		271ECF2A2A9DF42F00F25B7F /* addrecipe2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 271ECF1B2A9DF42F00F25B7F /* addrecipe2.mp4 */; };
+		271ECF352A9DF73D00F25B7F /* contentview.gif in Resources */ = {isa = PBXBuildFile; fileRef = 271ECF2B2A9DF73C00F25B7F /* contentview.gif */; };
+		271ECF362A9DF73D00F25B7F /* addrecipe2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 271ECF2C2A9DF73D00F25B7F /* addrecipe2.gif */; };
+		271ECF372A9DF73D00F25B7F /* editrecipe.gif in Resources */ = {isa = PBXBuildFile; fileRef = 271ECF2D2A9DF73D00F25B7F /* editrecipe.gif */; };
+		271ECF382A9DF73D00F25B7F /* delete recipe.gif in Resources */ = {isa = PBXBuildFile; fileRef = 271ECF2E2A9DF73D00F25B7F /* delete recipe.gif */; };
+		271ECF392A9DF73D00F25B7F /* editandreorder.gif in Resources */ = {isa = PBXBuildFile; fileRef = 271ECF2F2A9DF73D00F25B7F /* editandreorder.gif */; };
+		271ECF3A2A9DF73D00F25B7F /* signup.gif in Resources */ = {isa = PBXBuildFile; fileRef = 271ECF302A9DF73D00F25B7F /* signup.gif */; };
+		271ECF3B2A9DF73D00F25B7F /* alerts.gif in Resources */ = {isa = PBXBuildFile; fileRef = 271ECF312A9DF73D00F25B7F /* alerts.gif */; };
+		271ECF3C2A9DF73D00F25B7F /* addrecipe.gif in Resources */ = {isa = PBXBuildFile; fileRef = 271ECF322A9DF73D00F25B7F /* addrecipe.gif */; };
+		271ECF3D2A9DF73D00F25B7F /* darkmode.gif in Resources */ = {isa = PBXBuildFile; fileRef = 271ECF332A9DF73D00F25B7F /* darkmode.gif */; };
+		271ECF3E2A9DF73D00F25B7F /* logout.gif in Resources */ = {isa = PBXBuildFile; fileRef = 271ECF342A9DF73D00F25B7F /* logout.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,20 +60,20 @@
 		271ECF082A9DED0000F25B7F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		271ECF0A2A9DEFF500F25B7F /* .gitignore.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = .gitignore.md; sourceTree = "<group>"; };
 		271ECF0D2A9DF42E00F25B7F /* contentview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contentview.png; sourceTree = "<group>"; };
-		271ECF0E2A9DF42E00F25B7F /* editandreorder.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = editandreorder.mp4; sourceTree = "<group>"; };
-		271ECF0F2A9DF42E00F25B7F /* logout.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = logout.mp4; sourceTree = "<group>"; };
 		271ECF102A9DF42E00F25B7F /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
 		271ECF112A9DF42F00F25B7F /* start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start.png; sourceTree = "<group>"; };
-		271ECF122A9DF42F00F25B7F /* signup.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = signup.mp4; sourceTree = "<group>"; };
-		271ECF132A9DF42F00F25B7F /* darkmode.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = darkmode.mp4; sourceTree = "<group>"; };
 		271ECF142A9DF42F00F25B7F /* viewrecipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = viewrecipe.png; sourceTree = "<group>"; };
-		271ECF152A9DF42F00F25B7F /* alerts.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = alerts.mp4; sourceTree = "<group>"; };
-		271ECF162A9DF42F00F25B7F /* delete recipe.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "delete recipe.mp4"; sourceTree = "<group>"; };
-		271ECF172A9DF42F00F25B7F /* contentview.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = contentview.mp4; sourceTree = "<group>"; };
 		271ECF182A9DF42F00F25B7F /* signup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signup.png; sourceTree = "<group>"; };
-		271ECF192A9DF42F00F25B7F /* addrecipe.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = addrecipe.mp4; sourceTree = "<group>"; };
-		271ECF1A2A9DF42F00F25B7F /* editrecipe.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = editrecipe.mp4; sourceTree = "<group>"; };
-		271ECF1B2A9DF42F00F25B7F /* addrecipe2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = addrecipe2.mp4; sourceTree = "<group>"; };
+		271ECF2B2A9DF73C00F25B7F /* contentview.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = contentview.gif; sourceTree = "<group>"; };
+		271ECF2C2A9DF73D00F25B7F /* addrecipe2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = addrecipe2.gif; sourceTree = "<group>"; };
+		271ECF2D2A9DF73D00F25B7F /* editrecipe.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = editrecipe.gif; sourceTree = "<group>"; };
+		271ECF2E2A9DF73D00F25B7F /* delete recipe.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "delete recipe.gif"; sourceTree = "<group>"; };
+		271ECF2F2A9DF73D00F25B7F /* editandreorder.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = editandreorder.gif; sourceTree = "<group>"; };
+		271ECF302A9DF73D00F25B7F /* signup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = signup.gif; sourceTree = "<group>"; };
+		271ECF312A9DF73D00F25B7F /* alerts.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = alerts.gif; sourceTree = "<group>"; };
+		271ECF322A9DF73D00F25B7F /* addrecipe.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = addrecipe.gif; sourceTree = "<group>"; };
+		271ECF332A9DF73D00F25B7F /* darkmode.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = darkmode.gif; sourceTree = "<group>"; };
+		271ECF342A9DF73D00F25B7F /* logout.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = logout.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,18 +157,18 @@
 		271ECF0C2A9DF3F600F25B7F /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
-				271ECF192A9DF42F00F25B7F /* addrecipe.mp4 */,
-				271ECF1B2A9DF42F00F25B7F /* addrecipe2.mp4 */,
-				271ECF152A9DF42F00F25B7F /* alerts.mp4 */,
-				271ECF172A9DF42F00F25B7F /* contentview.mp4 */,
+				271ECF322A9DF73D00F25B7F /* addrecipe.gif */,
+				271ECF2C2A9DF73D00F25B7F /* addrecipe2.gif */,
+				271ECF312A9DF73D00F25B7F /* alerts.gif */,
+				271ECF2B2A9DF73C00F25B7F /* contentview.gif */,
+				271ECF332A9DF73D00F25B7F /* darkmode.gif */,
+				271ECF2E2A9DF73D00F25B7F /* delete recipe.gif */,
+				271ECF2F2A9DF73D00F25B7F /* editandreorder.gif */,
+				271ECF2D2A9DF73D00F25B7F /* editrecipe.gif */,
+				271ECF342A9DF73D00F25B7F /* logout.gif */,
+				271ECF302A9DF73D00F25B7F /* signup.gif */,
 				271ECF0D2A9DF42E00F25B7F /* contentview.png */,
-				271ECF132A9DF42F00F25B7F /* darkmode.mp4 */,
-				271ECF162A9DF42F00F25B7F /* delete recipe.mp4 */,
-				271ECF0E2A9DF42E00F25B7F /* editandreorder.mp4 */,
-				271ECF1A2A9DF42F00F25B7F /* editrecipe.mp4 */,
 				271ECF102A9DF42E00F25B7F /* login.png */,
-				271ECF0F2A9DF42E00F25B7F /* logout.mp4 */,
-				271ECF122A9DF42F00F25B7F /* signup.mp4 */,
 				271ECF182A9DF42F00F25B7F /* signup.png */,
 				271ECF112A9DF42F00F25B7F /* start.png */,
 				271ECF142A9DF42F00F25B7F /* viewrecipe.png */,
@@ -244,25 +244,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				271ECF2A2A9DF42F00F25B7F /* addrecipe2.mp4 in Resources */,
-				271ECF242A9DF42F00F25B7F /* alerts.mp4 in Resources */,
 				271ECEDB2A99DBE300F25B7F /* Preview Assets.xcassets in Resources */,
-				271ECF292A9DF42F00F25B7F /* editrecipe.mp4 in Resources */,
+				271ECF352A9DF73D00F25B7F /* contentview.gif in Resources */,
+				271ECF3B2A9DF73D00F25B7F /* alerts.gif in Resources */,
 				271ECED82A99DBE300F25B7F /* Assets.xcassets in Resources */,
-				271ECF222A9DF42F00F25B7F /* darkmode.mp4 in Resources */,
-				271ECF262A9DF42F00F25B7F /* contentview.mp4 in Resources */,
 				271ECF202A9DF42F00F25B7F /* start.png in Resources */,
-				271ECF1D2A9DF42F00F25B7F /* editandreorder.mp4 in Resources */,
-				271ECF282A9DF42F00F25B7F /* addrecipe.mp4 in Resources */,
+				271ECF3A2A9DF73D00F25B7F /* signup.gif in Resources */,
+				271ECF3D2A9DF73D00F25B7F /* darkmode.gif in Resources */,
 				271ECF232A9DF42F00F25B7F /* viewrecipe.png in Resources */,
-				271ECF212A9DF42F00F25B7F /* signup.mp4 in Resources */,
-				271ECF252A9DF42F00F25B7F /* delete recipe.mp4 in Resources */,
-				271ECF1E2A9DF42F00F25B7F /* logout.mp4 in Resources */,
+				271ECF392A9DF73D00F25B7F /* editandreorder.gif in Resources */,
+				271ECF372A9DF73D00F25B7F /* editrecipe.gif in Resources */,
 				271ECF1F2A9DF42F00F25B7F /* login.png in Resources */,
 				271ECF1C2A9DF42F00F25B7F /* contentview.png in Resources */,
+				271ECF3E2A9DF73D00F25B7F /* logout.gif in Resources */,
+				271ECF382A9DF73D00F25B7F /* delete recipe.gif in Resources */,
 				271ECF0B2A9DEFF500F25B7F /* .gitignore.md in Resources */,
 				271ECF092A9DED0000F25B7F /* README.md in Resources */,
+				271ECF362A9DF73D00F25B7F /* addrecipe2.gif in Resources */,
 				271ECF272A9DF42F00F25B7F /* signup.png in Resources */,
+				271ECF3C2A9DF73D00F25B7F /* addrecipe.gif in Resources */,
 				271ECEED2A99DE0700F25B7F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
