@@ -65,7 +65,6 @@
 		271ECEC72A99DBE200F25B7F = {
 			isa = PBXGroup;
 			children = (
-				271ECF0A2A9DEFF500F25B7F /* .gitignore.md */,
 				271ECF082A9DED0000F25B7F /* README.md */,
 				271ECED22A99DBE200F25B7F /* recipe-blog-trial-project */,
 				271ECED12A99DBE200F25B7F /* Products */,
@@ -88,6 +87,7 @@
 				271ECEEF2A99E83700F25B7F /* Views */,
 				271ECED72A99DBE300F25B7F /* Assets.xcassets */,
 				271ECEEC2A99DE0700F25B7F /* GoogleService-Info.plist */,
+				271ECF0A2A9DEFF500F25B7F /* .gitignore.md */,
 				271ECED92A99DBE300F25B7F /* Preview Content */,
 			);
 			path = "recipe-blog-trial-project";
