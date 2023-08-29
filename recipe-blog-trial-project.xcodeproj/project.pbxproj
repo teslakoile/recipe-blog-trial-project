@@ -24,6 +24,8 @@
 		271ECEFD2A99E8B500F25B7F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271ECEFC2A99E8B500F25B7F /* ContentView.swift */; };
 		271ECF052A9A067700F25B7F /* AddRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271ECF042A9A067600F25B7F /* AddRecipeView.swift */; };
 		271ECF072A9A0EED00F25B7F /* ParentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271ECF062A9A0EED00F25B7F /* ParentView.swift */; };
+		271ECF092A9DED0000F25B7F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 271ECF082A9DED0000F25B7F /* README.md */; };
+		271ECF0B2A9DEFF500F25B7F /* .gitignore.md in Resources */ = {isa = PBXBuildFile; fileRef = 271ECF0A2A9DEFF500F25B7F /* .gitignore.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		271ECEFC2A99E8B500F25B7F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		271ECF042A9A067600F25B7F /* AddRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeView.swift; sourceTree = "<group>"; };
 		271ECF062A9A0EED00F25B7F /* ParentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentView.swift; sourceTree = "<group>"; };
+		271ECF082A9DED0000F25B7F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		271ECF0A2A9DEFF500F25B7F /* .gitignore.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = .gitignore.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 		271ECEC72A99DBE200F25B7F = {
 			isa = PBXGroup;
 			children = (
+				271ECF0A2A9DEFF500F25B7F /* .gitignore.md */,
+				271ECF082A9DED0000F25B7F /* README.md */,
 				271ECED22A99DBE200F25B7F /* recipe-blog-trial-project */,
 				271ECED12A99DBE200F25B7F /* Products */,
 			);
@@ -187,6 +193,8 @@
 			files = (
 				271ECEDB2A99DBE300F25B7F /* Preview Assets.xcassets in Resources */,
 				271ECED82A99DBE300F25B7F /* Assets.xcassets in Resources */,
+				271ECF0B2A9DEFF500F25B7F /* .gitignore.md in Resources */,
+				271ECF092A9DED0000F25B7F /* README.md in Resources */,
 				271ECEED2A99DE0700F25B7F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
